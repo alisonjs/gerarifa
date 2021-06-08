@@ -1,4 +1,4 @@
-package com.gerarifa.Gerarifa;
+package com.gerarifa.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
