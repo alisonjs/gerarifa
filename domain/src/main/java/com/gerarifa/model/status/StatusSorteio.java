@@ -1,4 +1,4 @@
-package com.gerarifa.domain.status;
+package com.gerarifa.model.status;
 
 /**
  * Criado por Alison em 07/06/2021

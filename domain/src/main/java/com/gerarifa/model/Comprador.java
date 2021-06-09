@@ -1,4 +1,4 @@
-package com.gerarifa.domain;
+package com.gerarifa.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

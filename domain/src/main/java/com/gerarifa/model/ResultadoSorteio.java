@@ -1,4 +1,4 @@
-package com.gerarifa.domain;
+package com.gerarifa.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,11 +17,11 @@ import java.util.Objects;
 @NoArgsConstructor
 public class ResultadoSorteio {
 
-    private String codigoBilhete;
+    private Bilhete bilhete;
 
-    private String sorteio;
+    private Sorteio sorteio;
 
-    private String premio;
+    private Premio premio;
 
     private Date dataRealizacaoSorteio;
 
@@ -30,11 +30,11 @@ public class ResultadoSorteio {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ResultadoSorteio that = (ResultadoSorteio) o;
-        return codigoBilhete.equals(that.codigoBilhete) && sorteio.equals(that.sorteio);
+        return bilhete.equals(that.bilhete) && sorteio.equals(that.sorteio) && premio.equals(that.premio);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(codigoBilhete, sorteio);
+        return Objects.hash(bilhete, sorteio, premio);
     }
 }

@@ -1,5 +1,6 @@
-package com.gerarifa.domain;
+package com.gerarifa.model;
 
+import com.gerarifa.model.status.StatusPremio;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,5 +19,7 @@ public class Premio {
     private String descricao;
 
     private String foto;
+
+    private StatusPremio status = StatusPremio.DISPONIVEL;
 
 }
