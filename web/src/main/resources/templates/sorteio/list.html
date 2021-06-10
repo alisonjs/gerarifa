@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="fragments/main :: page">
+<body>
+<div th:fragment="content">
+    <div class="container-fluid my-4">
+        <h3>Sorteios</h3>
+        <a class="btn btn-primary" th:href="@{/sorteio/form}">Novo</a>
+        <div class="row my-4">
+            <h4>Em Realização</h4>
+
+            <div th:each="sorteio, state : ${sorteios}" th:if="${!sorteios.empty}" class="col-md-4 col-sm-12">
+                <div class="card my-4">
+                    <div class="card-header" th:text="${sorteio.nome}"></div>
+                    <div class="card-body">
+                        <small class="text-muted" th:text="${sorteio.status}"></small>
+                        <p class="card-text"><small class="text-muted">Meta Arrecadação</small><br/><strong><th:block th:text="${sorteio.metaArrecadacao}"></th:block></strong></p>
+                        <p class="card-text"><small class="text-muted">Total Arrecadado</small><br/><strong>R$ 200</th:block></strong></p>
+                        <p class="card-text"><small class="text-muted">Data do Sorteio</small>
+                            <br><strong><th:block th:text="${sorteio.dataRealizacaoSorteio}"></th:block></strong></p>
+                        <a class="btn btn-primary" th:href="@{'/sorteio/view/' + ${sorteio.id}}">Gerenciar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

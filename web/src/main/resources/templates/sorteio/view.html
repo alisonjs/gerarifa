@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:include="fragments/main :: page">
+<body>
+<div th:fragment="content">
+    <div class="container my-4">
+        <header>
+            <h3>Informações do Sorteio</h3>
+        </header>
+
+        <div class="card w-75">
+            <div class="card-body bg-white">
+                <div class="row justify-content-between">
+                    <div class="col-md-6 col-sm-12">
+                        <small class="text-muted">Título</small>
+                        <p><strong th:text="${sorteio.nome}"></strong></p>
+                    </div>
+                    <div class="col-md-5 col-sm-12">
+                        <a th:href="@{'/sorteio/update/' + ${sorteio.id}}" class="btn btn-outline-primary">Editar</a>
+                        <a th:href="@{'/sorteio/delete/' + ${sorteio.id}}" class="btn btn-outline-danger">Finalizar</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Descrição</small>
+                        <p th:text="${sorteio.descricao}"></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <small class="text-muted">Prêmio</small>
+                        <p><strong th:text="${sorteio.premio}"> </strong></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <small class="text-muted">Preço do Bilhete</small>
+                        <p><strong th:text="${'R$ ' + sorteio.precoBilhete}"> </strong></p>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted">Data do Sorteio</small>
+                        <p><strong th:text="${sorteio.dataRealizacaoSorteio}"></strong></p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <small class="text-muted">Meta de Arrecadação</small>
+                        <p><strong th:text="${'R$ ' + sorteio.metaArrecadacao}"> </strong></p>
+                    </div>
+                    <div class="col-6">
+                        <small class="text-muted">Statur</small>
+                        <p><strong th:text="${sorteio.status}"></strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer"><button class="btn btn-primary" th:disabled="${not sorteio.isApto()}"> Sortear </button></div>
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
